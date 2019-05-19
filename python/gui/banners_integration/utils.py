@@ -53,16 +53,16 @@ def checkKeySet(data, keyCode=None):
 		if isinstance(key, int):
 			# virtual special keys
 			if key in (VKEY_ALT, VKEY_CONTROL, VKEY_SHIFT):
-				result = result and any(map(BigWorld.isKeyDown, VKEYS_MAP[key]))
-				fromSet = fromSet or keyCode in VKEYS_MAP[key]
+				result &= any(map(BigWorld.isKeyDown, VKEYS_MAP[key]))
+				fromSet |= keyCode in VKEYS_MAP[key]
 			# BW Keys
 			elif not BigWorld.isKeyDown(key):
-				fromSet = fromSet or keyCode == key
 				result = False
+				fromSet |= keyCode == key
 		# old special keys
 		if isinstance(key, list):
-			result = result and any(map(BigWorld.isKeyDown, key))
-			fromSet = fromSet or keyCode in key
+			result &= any(map(BigWorld.isKeyDown, key))
+			fromSet |= keyCode in key
 	if keyCode is not None:
 		return result, fromSet
 	return result
