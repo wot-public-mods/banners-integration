@@ -47,14 +47,14 @@ class Model(object):
 		BigWorld.addModel(self._model, BigWorld.player().spaceID)
 		self.__update()
 
-	def updateData(self, pos = None, yrp = None):
+	def updateData(self, pos=None, yrp=None):
 		self.__changed = True
 		if pos is not None:
 			self.__pos = pos
 		if yrp is not None:
 			self.__yrp = yrp
 		self.__update()
-	
+
 	def destroy(self):
 		if self.__changed:
 			with open('%s/%s' % (ENTITIES_PATH, self.__name), 'wb') as fh:
@@ -89,7 +89,7 @@ class ModelsController(object):
 	def __init__(self):
 		self.modelsRaw = []
 		self.models = []
-	
+
 	def init(self):
 		for fileName in os.listdir(ENTITIES_PATH):
 			if not fileName.endswith('.json'):
@@ -98,7 +98,7 @@ class ModelsController(object):
 				self.modelsRaw.append((fileName, byteify(json.load(fh))))
 
 	def clean(self):
-		while len(self.models):
+		while self.models:
 			model = self.models.pop()
 			model.destroy()
 		self.models = []
@@ -142,11 +142,11 @@ class ModelsController(object):
 			offset = Math.Vector3(0.0, 0.0, baseValue * moveOffset)
 		target += offset
 		if moveType == MODEL.POSITION:
-			model.updateData(pos = target)
+			model.updateData(pos=target)
 		elif moveType == MODEL.DIRECTION:
-			model.updateData(yrp = target)
+			model.updateData(yrp=target)
 		return True
-	
+
 	def delModel(self):
 		targetModel = self.__nearModel()
 		if not targetModel:
@@ -182,7 +182,7 @@ g_instance = ModelsController()
 def activateFreeCam():
 	inputHandler = getattr(BigWorld.player(), 'inputHandler', None)
 	if inputHandler and inputHandler.ctrlModeName == 'arcade':
-		inputHandler.onControlModeChanged('video', prevModeName=inputHandler.ctrlModeName, 
+		inputHandler.onControlModeChanged('video', prevModeName=inputHandler.ctrlModeName,
 											camMatrix=BigWorld.camera().matrix)
 
 keysMapping = [
@@ -193,7 +193,7 @@ keysMapping = [
 
 	[[Keys.KEY_LCONTROL, Keys.KEY_F1], activateFreeCam],
 
-	[[Keys.KEY_LCONTROL, Keys.KEY_DELETE], lambda: g_instance.delModel()],
+	[[Keys.KEY_LCONTROL, Keys.KEY_DELETE], g_instance.delModel],
 
 	[[Keys.KEY_LCONTROL, Keys.KEY_Z, Keys.KEY_UPARROW], lambda: g_instance.updateModel(MODEL.POSITION, MODEL.X, 1)],
 	[[Keys.KEY_LCONTROL, Keys.KEY_Z, Keys.KEY_DOWNARROW], lambda: g_instance.updateModel(MODEL.POSITION, MODEL.X, -1)],

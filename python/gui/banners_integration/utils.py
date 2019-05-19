@@ -42,7 +42,7 @@ VKEYS_MAP = {
 	VKEY_CONTROL: (Keys.KEY_LCONTROL, Keys.KEY_RCONTROL),
 	VKEY_SHIFT: (Keys.KEY_LSHIFT, Keys.KEY_RSHIFT),
 }
-def checkKeySet(data, keyCode = None):
+def checkKeySet(data, keyCode=None):
 	"""Verify is keys is pressed
 	:param data: list of keys to be checked
 	:param keyCode: pressed keyCode"""
