@@ -91,6 +91,8 @@ class ModelsController(object):
 		self.models = []
 
 	def init(self):
+		if not os.path.isdir(ENTITIES_PATH):
+			return
 		for fileName in os.listdir(ENTITIES_PATH):
 			if not fileName.endswith('.json'):
 				continue
