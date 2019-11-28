@@ -7,6 +7,7 @@ import BigWorld
 import Keys
 import Math
 
+from aih_constants import CTRL_MODE_NAME
 from gui.banners_integration._constants import MODEL, ENTITIES_PATH, MODEL_PATH
 from gui.banners_integration.utils import byteify, checkKeySet
 
@@ -183,8 +184,8 @@ g_instance = ModelsController()
 
 def activateFreeCam():
 	inputHandler = getattr(BigWorld.player(), 'inputHandler', None)
-	if inputHandler and inputHandler.ctrlModeName == 'arcade':
-		inputHandler.onControlModeChanged('video', prevModeName=inputHandler.ctrlModeName,
+	if inputHandler and inputHandler.ctrlModeName == CTRL_MODE_NAME.ARCADE:
+		inputHandler.onControlModeChanged(CTRL_MODE_NAME.VIDEO, prevModeName=inputHandler.ctrlModeName,
 											camMatrix=BigWorld.camera().matrix)
 
 keysMapping = [
