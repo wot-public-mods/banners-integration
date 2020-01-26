@@ -1,6 +1,5 @@
 
 import os
-import sys
 
 __all__ = ('IS_DEV', 'ENTITIES_PATH', 'MODEL', 'MODEL_PATH')
 
