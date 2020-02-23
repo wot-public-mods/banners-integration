@@ -7,13 +7,13 @@
 	},
 	"game": {
 		"folder": "E:\\wot\\cis",
-		"version": "1.7.8.0"
+		"version": "1.8.0.0"
 	},
 	"info": {
 		"id": "bannersintegration",
-		"author": "net.wargaming",
+		"author": "poliroid",
 		"name": "Banners integration",
 		"description": "Integrate custom banners on maps",
-		"version": "1.2.2"
+		"version": "1.2.4"
 	}
 }
