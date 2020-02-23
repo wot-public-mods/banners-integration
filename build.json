@@ -11,7 +11,7 @@
 	},
 	"info": {
 		"id": "bannersintegration",
-		"author": "net.wargaming",
+		"author": "poliroid",
 		"name": "Banners integration",
 		"description": "Integrate custom banners on maps",
 		"version": "1.2.3"

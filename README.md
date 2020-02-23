@@ -5,7 +5,7 @@
 
 Code license: CC BY-NC-SA 4.0
 
-P0LIR0ID 2015-2019
+P0LIR0ID 2015-2020
 
 ### Example of what a banners looks model 1
 ![Example of what a banners looks model 1](https://static.poliroid.ru/bannersintegration_banner1.jpg)
