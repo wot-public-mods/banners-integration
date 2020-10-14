@@ -100,7 +100,7 @@ class ModelsController(object):
 			with open('%s/%s' % (ENTITIES_PATH, fileName), "rb") as fh:
 				self.modelsRaw.append((fileName, byteify(json.load(fh))))
 
-	def clean(self):
+	def cleanup(self):
 		while self.models:
 			model = self.models.pop()
 			model.destroy()

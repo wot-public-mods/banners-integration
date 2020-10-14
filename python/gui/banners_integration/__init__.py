@@ -16,4 +16,4 @@ def init():
 	g_instance.init()
 
 def fini():
-	g_instance.clean()
+	g_instance.cleanup()

@@ -26,7 +26,7 @@ def handleKeyEvent(baseMethod, event):
 def onGUISpaceEntered(spaceID):
 	if spaceID != GuiGlobalSpaceID.BATTLE:
 		return
-	g_instance.clean()
+	g_instance.cleanup()
 	geometryName = BigWorld.player().arena.arenaType.geometryName
 	for name, data in g_instance.modelsRaw:
 		if data['geometryName'] != str(geometryName):
@@ -39,5 +39,5 @@ ServicesLocator.appLoader.onGUISpaceEntered += onGUISpaceEntered
 def onGUISpaceLeft(spaceID):
 	if spaceID != GuiGlobalSpaceID.BATTLE:
 		return
-	g_instance.clean()
+	g_instance.cleanup()
 ServicesLocator.appLoader.onGUISpaceLeft += onGUISpaceLeft
