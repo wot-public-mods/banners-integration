@@ -2,18 +2,18 @@
 	"version": 3,
 	"software": {
 		"animate": "C:\\Program Files\\Adobe\\Adobe Animate 2020\\Animate.exe",
-		"python": "C:\\Program Files\\Python27\\python.exe",
+		"python": "C:\\Program Files\\Python-2.7.17\\python.exe",
 		"sonar": "sonar.cmd"
 	},
 	"game": {
-		"folder": "E:\\wot\\cis",
-		"version": "1.8.0.0"
+		"folder": "E:\\wot\\ct",
+		"version": "1.10.1.0"
 	},
 	"info": {
 		"id": "bannersintegration",
 		"author": "poliroid",
 		"name": "Banners integration",
 		"description": "Integrate custom banners on maps",
-		"version": "1.2.4"
+		"version": "1.2.5"
 	}
 }
