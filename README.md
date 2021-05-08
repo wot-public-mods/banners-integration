@@ -3,9 +3,8 @@
 
 **Banners Integration** This is a modification for the game "World Of Tanks" which allows you create & edit 3d banners in world.
 
-Code license: CC BY-NC-SA 4.0
-
-P0LIR0ID 2015-2020
+SPDX-License-Identifier: LGPL-3.0-or-later
+Copyright(c) 2021 Andrey Andruschyshyn. All rights reserved.
 
 ### Example of what a banners looks model 1
 ![Example of what a banners looks model 1](https://static.poliroid.ru/bannersintegration_banner1.jpg)
