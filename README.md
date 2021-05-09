@@ -1,5 +1,6 @@
 ﻿
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=P0LIR0ID_wot-bannersintegration&metric=alert_status)](https://sonarcloud.io/dashboard?id=P0LIR0ID_wot-bannersintegration)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=wot-public-mods_banners-integration&metric=alert_status)](https://sonarcloud.io/dashboard?id=wot-public-mods_banners-integration) 
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=wot-public-mods_banners-integration&metric=ncloc)](https://sonarcloud.io/dashboard?id=wot-public-mods_banners-integration)
 
 **Banners Integration** This is a modification for the game "World Of Tanks" which allows you create & edit 3d banners in world.  
 
