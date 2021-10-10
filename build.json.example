@@ -1,0 +1,19 @@
+{
+	"version": 3,
+	"software": {
+		"animate": "/path/to/adobe_animate",
+		"python": "/path/to/python_27",
+		"sonar": ""
+	},
+	"game": {
+		"folder": "/path/to/wot_dir",
+		"version": "wot_version"
+	},
+	"info": {
+		"id": "bannersintegration",
+		"author": "poliroid",
+		"name": "Banners integration",
+		"description": "Integrate custom banners on maps",
+		"version": "mod_version"
+	}
+}
