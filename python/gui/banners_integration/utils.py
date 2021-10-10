@@ -2,8 +2,9 @@
 import types
 import BigWorld
 import Keys
+import ResMgr
 
-__all__ = ('byteify', 'override', 'checkKeySet')
+__all__ = ('byteify', 'override', 'checkKeySet', 'fileExistVFS')
 
 def override(holder, name, wrapper=None, setter=None):
 	"""Override methods, properties, functions, attributes
@@ -66,3 +67,7 @@ def checkKeySet(data, keyCode=None):
 	if keyCode is not None:
 		return result, fromSet
 	return result
+
+def fileExistVFS(path):
+	file = ResMgr.openSection(path)
+	return file is not None and ResMgr.isFile(path)

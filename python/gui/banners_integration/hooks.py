@@ -32,8 +32,9 @@ def onGUISpaceEntered(spaceID):
 		if data['geometryName'] != str(geometryName):
 			continue
 		model = Model()
-		model.setData(name, data)
-		g_instance.models.append(model)
+		result = model.setData(name, data)
+		if result:
+			g_instance.models.append(model)
 ServicesLocator.appLoader.onGUISpaceEntered += onGUISpaceEntered
 
 def onGUISpaceLeft(spaceID):

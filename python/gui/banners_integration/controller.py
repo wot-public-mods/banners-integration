@@ -8,8 +8,9 @@ import Keys
 import Math
 
 from aih_constants import CTRL_MODE_NAME
+from debug_utils import LOG_ERROR
 from gui.banners_integration._constants import MODEL, ENTITIES_PATH, MODEL_PATH
-from gui.banners_integration.utils import byteify, checkKeySet
+from gui.banners_integration.utils import byteify, checkKeySet, fileExistVFS
 
 __all__ = ('Model', 'g_instance', 'keysMapping')
 
@@ -37,16 +38,21 @@ class Model(object):
 		self.__changed = False
 
 	def setData(self, name, data):
+		path = MODEL_PATH % str(data['model'])
+		if not fileExistVFS(path):
+			LOG_ERROR('Model.setData bad model path', path)
+			return False
 		self.__name = name
 		self.__data = data
 		self.__pos = Math.Vector3(data[MODEL.POSITION])
 		self.__yrp = Math.Vector3(data[MODEL.DIRECTION])
 		self._motor = BigWorld.Servo(Math.Matrix())
-		self._model = BigWorld.Model(MODEL_PATH % str(data['model']))
+		self._model = BigWorld.Model(path)
 		self._model.addMotor(self._motor)
 		self._model.visible = True
 		BigWorld.addModel(self._model, BigWorld.player().spaceID)
 		self.__update()
+		return True
 
 	def updateData(self, pos=None, yrp=None):
 		self.__changed = True
@@ -120,8 +126,9 @@ class ModelsController(object):
 		}
 		self.modelsRaw.append((fileName, data))
 		model = Model()
-		model.setData(fileName, data)
-		self.models.append(model)
+		result = model.setData(fileName, data)
+		if result:
+			self.models.append(model)
 		with open('%s/%s' % (ENTITIES_PATH, fileName), 'wb') as fh:
 			fh.write(json.dumps(byteify(data), indent=4, sort_keys=True))
 		return True
