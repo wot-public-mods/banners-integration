@@ -1,10 +1,10 @@
-__author__ = "Andruschyshyn Andrey"
-__copyright__ = "Copyright 2021, poliroid"
-__credits__ = ["Andruschyshyn Andrey"]
+__author__ = "Andrii Andrushchyshyn"
+__copyright__ = "Copyright 2022, poliroid"
+__credits__ = ["Andrii Andrushchyshyn"]
 __license__ = "LGPL-3.0-or-later"
 __version__ = "1.2.8"
-__maintainer__ = "Andruschyshyn Andrey"
-__email__ = "poliroid@pm.me"
+__maintainer__ = "Andrii Andrushchyshyn"
+__email__ = "contact@poliroid.me"
 __status__ = "Production"
 
 from gui.banners_integration.controller import g_instance
