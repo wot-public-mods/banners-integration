@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.9
+
+* wot 1.18.0 fixes
+
 ## v1.2.8
 
 * check model file exist
