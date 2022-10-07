@@ -4,11 +4,12 @@ import game
 import Keys
 
 from helpers import isPlayerAvatar
-from gui.banners_integration.controller import g_instance, keysMapping, Model
-from gui.banners_integration._constants import IS_DEV
-from gui.banners_integration.utils import checkKeySet, override
 from gui.shared.personality import ServicesLocator
 from skeletons.gui.app_loader import GuiGlobalSpaceID
+
+from .controller import g_instance, keysMapping, Model
+from ._constants import IS_DEV
+from .utils import checkKeySet, override
 
 __all__ = ()
 

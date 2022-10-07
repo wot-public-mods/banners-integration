@@ -9,8 +9,9 @@ import Math
 
 from aih_constants import CTRL_MODE_NAME
 from debug_utils import LOG_ERROR
-from gui.banners_integration._constants import MODEL, ENTITIES_PATH, MODEL_PATH
-from gui.banners_integration.utils import byteify, checkKeySet, fileExistVFS
+
+from ._constants import MODEL, ENTITIES_PATH, MODEL_PATH
+from .utils import byteify, checkKeySet, fileExistVFS
 
 __all__ = ('Model', 'g_instance', 'keysMapping')
 
