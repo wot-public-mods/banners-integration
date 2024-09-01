@@ -1,11 +1,7 @@
-__author__ = "Andrii Andrushchyshyn"
-__copyright__ = "Copyright 2022, poliroid"
-__credits__ = ["Andrii Andrushchyshyn"]
-__license__ = "LGPL-3.0-or-later"
-__version__ = "1.3.0"
-__maintainer__ = "Andrii Andrushchyshyn"
-__email__ = "contact@poliroid.me"
-__status__ = "Production"
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2017-2024 Andrii Andrushchyshyn
+
+__version__ = "1.3.1"
 
 from .controller import g_instance
 from .hooks import *
