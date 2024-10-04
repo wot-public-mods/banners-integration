@@ -2,11 +2,13 @@
 # Copyright (c) 2017-2024 Andrii Andrushchyshyn
 
 import types
+
 import BigWorld
 import Keys
+import Math
 import ResMgr
 
-__all__ = ('byteify', 'override', 'checkKeySet', 'fileExistVFS')
+__all__ = ('byteify', 'override', 'checkKeySet', 'vfs_file_exist', 'pack_vector')
 
 def override(holder, name, wrapper=None, setter=None):
 	"""Override methods, properties, functions, attributes
@@ -70,6 +72,14 @@ def checkKeySet(data, keyCode=None):
 		return result, fromSet
 	return result
 
-def fileExistVFS(path):
+def vfs_file_exist(path):
 	file = ResMgr.openSection(path)
 	return file is not None and ResMgr.isFile(path)
+
+def pack_vector(vector, precision=3):
+	result = [round(vector.x, precision), round(vector.y, precision)]
+	if isinstance(vector, Math.Vector3):
+		result.append(round(vector.z, precision))
+	if isinstance(vector, Math.Vector4):
+		result.append(round(vector.w, precision))
+	return result

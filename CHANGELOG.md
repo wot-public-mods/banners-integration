@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.00
+
+* interactive editor implementation
+
 ## v1.3.1
 
 * update credentials & license

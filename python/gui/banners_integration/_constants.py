@@ -3,17 +3,9 @@
 
 import os
 
-__all__ = ('IS_DEV', 'ENTITIES_PATH', 'MODEL', 'MODEL_PATH')
+IS_EDITOR = os.path.isfile('.debug_mods')
 
-IS_DEV = os.path.isfile('.debug_mods')
+DATA_VERSION = 2
+DATA_PATH = 'mods/resources/banners.integration'
 
-ENTITIES_PATH = './mods/resources/banners.integration'
-
-MODEL_PATH = 'content/mods/banners.integration/%s.model'
-
-class MODEL:
-	POSITION = 'position'
-	DIRECTION = 'direction'
-	X = 'x'
-	Y = 'y'
-	Z = 'z'
+MODEL_NAME_MASK = 'content/mods/banners.integration/%s.model'
