@@ -7,6 +7,7 @@ import game
 from helpers import isPlayerAvatar
 
 from ._constants import IS_EDITOR
+from .editor import editor_ctrl
 from .utils import override
 
 @override(game, 'handleKeyEvent')
@@ -20,5 +21,8 @@ def handleKeyEvent(baseMethod, event):
 
 	if not isPlayerAvatar():
 		return baseMethod(event)
+
+	if editor_ctrl.handleKeyEvent(event):
+		return True
 
 	return baseMethod(event)
