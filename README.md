@@ -29,16 +29,16 @@ To enable the editor, place the `.debug_mods` file into your game folder. By def
 Here are some examples of banners added to map using this mod:
 
 - **Model 1**  
-![Model 1](https://gitlab.com/wot-public-mods/banners-integration/-/raw/master/resources/model_1.jpg)
+![Model 1](./resources/model_1.jpg)
 
 - **Model 2**  
-![Model 2](https://gitlab.com/wot-public-mods/banners-integration/-/raw/master/resources/model_2.jpg)
+![Model 2](./resources/model_2.jpg)
 
 - **Model 3**  
-![Model 3](https://gitlab.com/wot-public-mods/banners-integration/-/raw/master/resources/model_3.jpg)
+![Model 3](./resources/model_3.jpg)
 
 - **Model 4**  
-![Model 4](https://gitlab.com/wot-public-mods/banners-integration/-/raw/master/resources/model_4.jpg)
+![Model 4](./resources/model_4.jpg)
 
 ## 💖 Donate
 
@@ -51,7 +51,7 @@ Thank you for your support!
 
 ## 📄 License
 
-This project is licensed under the MIT License. See the [LICENSE](https://gitlab.com/wot-public-mods/banners-integration/-/blob/master/LICENSE.md) file for more information.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE.md) file for more information.
 
 ## 🤝 Contributing
 
