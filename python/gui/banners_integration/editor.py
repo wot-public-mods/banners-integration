@@ -285,7 +285,7 @@ class InteractiveMarker:
 	def markerID(self):
 		return self._markerID
 
-	def update(self, cameraPosition, viewProjectionMatrix, screenWidth, screenHeight):
+	def update(self, cameraPosition, viewProjectionMatrix, screenWidth, screenHeight, interfaceScale):
 		if not self._flash:
 			return
 		position = Math.Vector3(self._model.position)
@@ -295,7 +295,7 @@ class InteractiveMarker:
 			posInClip = posInClip.scale(1 / posInClip.w)
 
 		self._flash.update({
-			'position': [screenWidth * (posInClip.x + 1.0) / 2.0, screenHeight * (-posInClip.y + 1.0) / 2.0],
+			'position': [screenWidth * (posInClip.x + 1.0) / 2.0  / interfaceScale, screenHeight * (-posInClip.y + 1.0) / 2.0 / interfaceScale],
 			'onScreen': posInClip.w != 0 and -1.1 <= posInClip.x / posInClip.w <= 1.1 and -1.1 <= posInClip.y / posInClip.w <= 1.1 and posInClip.z < 1,
 			'deph': int((position - cameraPosition).length),
 		})
@@ -355,8 +355,9 @@ class EditorController:
 		viewProjectionMatrix = cameras.getViewProjectionMatrix()
 		screenWidth = BigWorld.screenWidth()
 		screenHeight = BigWorld.screenHeight()
+		interfaceScale = float(ServicesLocator.settingsCore.interfaceScale.get()) or 1.0
 		for marker in self.markers.values():
-			marker.update(camera.position, viewProjectionMatrix, screenWidth, screenHeight)
+			marker.update(camera.position, viewProjectionMatrix, screenWidth, screenHeight, interfaceScale)
 
 		self.flash.as_updateDephS()
 

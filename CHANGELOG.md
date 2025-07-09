@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.0.1
+
+* feat(editor): Add support for interface scaling
+* update credentials & license
+
 ## v2.0.00
 
 * interactive editor implementation
